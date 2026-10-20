@@ -1,0 +1,126 @@
+
+===== SYSTEM =====
+OS: Ubuntu 22.04.5 LTS
+Kernel: 5.15.0-1061-raspi   Arch: aarch64
+Board: Raspberry Pi 4 Model B Rev 1.5
+Hostname: JellyFish   User: jellyfish
+Groups: jellyfish adm dialout cdrom sudo audio video plugdev games users input render netdev gpio spi i2c
+Uptime: up 6 minutes
+CPU temp: 29.2 C
+Throttled: throttled=0x0
+               total        used        free      shared  buff/cache   available
+Mem:           7.6Gi       163Mi       7.2Gi       3.0Mi       298Mi       7.2Gi
+/dev/mmcblk0p2   58G   13G   43G  24% /
+
+===== NETWORK =====
+IPs: 172.20.10.2 2409:40f4:4114:79c3:da3a:ddff:feb3:5dbc 
+eth0             DOWN           
+wlan0            UP             172.20.10.2/28 metric 600 2409:40f4:4114:79c3:da3a:ddff:feb3:5dbc/64 fe80::da3a:ddff:feb3:5dbc/64 
+ssh           active
+avahi-daemon  active
+chrony        inactive
+
+===== ROS 2 =====
+ROS_DISTRO=humble
+Installed ros-humble packages: 196
+  ros-humble-demo-nodes-py 0.20.10-1jammy.20260907.233124
+  ros-humble-rmw-connextdds 
+  ros-humble-rmw-cyclonedds-cpp 
+  ros-humble-rmw-dds-common 1.6.0-2jammy.20260907.211149
+  ros-humble-rmw-fastrtps-cpp 6.2.10-1jammy.20260907.212405
+  ros-humble-rmw-fastrtps-shared-cpp 6.2.10-1jammy.20260907.211742
+  ros-humble-rmw-implementation 2.8.5-1jammy.20260907.212850
+  ros-humble-rmw-implementation-cmake 6.1.4-1jammy.20260907.190736
+  ros-humble-robot-state-publisher 3.0.3-2jammy.20260916.052211
+  ros-humble-ros-base 0.10.0-1jammy.20260916.125240
+  ros-humble-ros-core 0.10.0-1jammy.20260908.041717
+  ros-humble-tf2-ros 0.25.24-1jammy.20260916.044048
+  ros-humble-tf2-ros-py 0.25.24-1jammy.20260916.044332
+-- ROS lines in ~/.bashrc:
+  121:source /opt/ros/humble/setup.bash
+-- ROS workspaces / packages (package.xml):
+
+===== PYTHON =====
+Python 3.10.12
+python: /usr/bin/python3 3.10.12
+  OK  rclpy        
+  --  cv2          ModuleNotFoundError: No module named 'cv2'
+  OK  numpy        1.21.5
+  OK  serial       3.5
+  --  flask        ModuleNotFoundError: No module named 'flask'
+  OK  yaml         5.4.1
+  --  cv_bridge    ModuleNotFoundError: No module named 'cv_bridge'
+  --  picamera2    ModuleNotFoundError: No module named 'picamera2'
+  --  ultralytics  ModuleNotFoundError: No module named 'ultralytics'
+  --  ncnn         ModuleNotFoundError: No module named 'ncnn'
+  --  torch        ModuleNotFoundError: No module named 'torch'
+  --  onnxruntime  ModuleNotFoundError: No module named 'onnxruntime'
+
+-- venv: /home/jellyfish/robot-env
+python: /home/jellyfish/robot-env/bin/python 3.10.12
+  OK  rclpy        
+  OK  cv2          5.0.0
+  OK  numpy        2.2.6
+  OK  serial       3.5
+  OK  flask        3.1.3
+  OK  yaml         5.4.1
+  --  cv_bridge    ModuleNotFoundError: No module named 'cv_bridge'
+  --  picamera2    ModuleNotFoundError: No module named 'picamera2'
+  OK  ultralytics  8.4.178
+  OK  ncnn         1.0.20260526
+  OK  torch        2.14.1+cu130
+  --  onnxruntime  ModuleNotFoundError: No module named 'onnxruntime'
+
+===== USB / SERIAL (ESP32) =====
+Bus 003 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+Bus 001 Device 004: ID 1a86:55d4 QinHeng Electronics USB Single Serial
+Bus 001 Device 003: ID 05a3:9420 ARC International HD USB Camera
+Bus 001 Device 002: ID 2109:3431 VIA Labs, Inc. Hub
+Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+crw-rw---- 1 root dialout 166, 0 Oct 19 09:58 /dev/ttyACM0
+No ESP32 serial port (/dev/ttyUSB* or /dev/ttyACM*)
+
+===== CAMERA =====
+/dev/video0 /dev/video1 /dev/video10 /dev/video11 /dev/video12 /dev/video13 /dev/video14 /dev/video15 /dev/video16 /dev/video18 /dev/video2 /dev/video20 /dev/video21 /dev/video22 /dev/video23 /dev/video3 /dev/video31
+  config.txt:13:# other dtoverlay= specification
+  config.txt:15:dtparam=i2c_arm=on
+  config.txt:30:# Autoload overlays for any recognized cameras or displays that are attached
+  config.txt:31:# to the CSI/DSI ports. Please note this is for libcamera support, *not* for
+  config.txt:32:# the legacy camera stack
+  config.txt:33:camera_auto_detect=1
+  config.txt:38:dtoverlay=dwc2
+  config.txt:43:dtoverlay=dwc2,dr_mode=host
+
+===== I2C =====
+/dev/i2c-1
+
+===== TOOLS =====
+  tmux         /usr/bin/tmux
+  git          /usr/bin/git
+  colcon       MISSING
+  rosdep       MISSING
+  docker       MISSING
+  arduino-cli  MISSING
+  v4l2-ctl     MISSING
+  gdown        MISSING
+  chronyc      MISSING
+
+===== PROJECT FILES =====
+total 40
+drwxrwxr-x  4 jellyfish jellyfish  4096 Oct 17 16:23 .
+drwxr-x--- 12 jellyfish jellyfish  4096 Oct 19 10:04 ..
+drwxrwxr-x  2 jellyfish jellyfish  4096 Oct 17 15:07 colab
+-rw-rw-r--  1 jellyfish jellyfish   164 Oct 17 16:23 .gitignore
+-rwxrwxr-x  1 jellyfish jellyfish  2464 Oct 17 16:37 install.sh
+drwxrwxr-x  3 jellyfish jellyfish  4096 Oct 17 16:43 pi
+-rw-rw-r--  1 jellyfish jellyfish 11110 Oct 17 16:22 README.md
+-rw-rw-r--  1 jellyfish jellyfish  1033 Oct 17 15:46 requirements.txt
+-- models / firmware found:
+  /home/jellyfish/pipe_robot/pi/pi_detect.py
+  /home/jellyfish/pipe_robot/pi/robot_serial.py
+
+===== AUTOSTART SERVICES =====
+none
+
+===== END =====

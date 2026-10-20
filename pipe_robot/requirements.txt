@@ -1,0 +1,23 @@
+# Part 3 - vision model runtime on the Raspberry Pi 4
+#
+# Install into the venv:
+#     python3 -m venv --system-site-packages ~/robot-env
+#     source ~/robot-env/bin/activate
+#     pip install -r requirements.txt
+#
+# --system-site-packages matters: it lets the venv see python3-picamera2 and the
+# system camera libraries installed with apt.
+
+ultralytics>=8.3.0      # YOLO loading + NCNN inference
+ncnn>=20240729          # the ARM inference engine behind the NCNN model
+opencv-python-headless  # capture, drawing, video writing - headless so it does
+                        # not need libGL on a Pi without a desktop
+numpy>=1.24
+flask>=3.0              # the browser stream on port 5000
+pyserial>=3.5           # only needed for --stop-on (ESP32)
+
+# If you do have a desktop on the Pi, plain `opencv-python` also works.
+# The classic error is:
+#   ImportError: libGL.so.1: cannot open shared object file
+# which you fix with  sudo apt install -y libgl1-mesa-gl
+# (opencv-python-headless, listed above, avoids needing sudo at all.)

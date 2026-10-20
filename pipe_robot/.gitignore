@@ -1,0 +1,10 @@
+# runtime output
+pi/detections.csv
+pi/detections/
+pi/*.mp4
+pi/selftest_run/
+*.jpg
+# model artefacts (too big for git)
+best*.pt
+best_ncnn_model/
+best_ncnn_model.zip

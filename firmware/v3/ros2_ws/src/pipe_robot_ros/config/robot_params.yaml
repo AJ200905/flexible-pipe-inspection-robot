@@ -1,0 +1,27 @@
+# Pipe robot parameters - after editing:  cd ~/ros2_ws && colcon build  then relaunch.
+
+serial_bridge:
+  ros__parameters:
+    port: "auto"              # or "/dev/ttyACM0"
+    baud: 115200
+    max_linear_speed: 1.0     # /cmd_vel linear.x (m/s) that equals 100 % motor
+    steer_gain_pct: 100.0     # tendon bend % per rad/s of /cmd_vel angular.z (teleop j/l/u/o)
+    max_pct: 80.0             # never send more than this % to the motors
+    cmd_timeout: 0.5          # s without /cmd_vel -> stop
+    stop_on_defect: false     # true = stop for defect_hold_s when vision raises /defect_alarm
+    defect_hold_s: 3.0
+
+vision_node:
+  ros__parameters:
+    camera: "0"               # "0" = /dev/video0, or a video file path for testing
+    width: 640
+    height: 480
+    model: "~/pipe_robot/best_ncnn_model"   # "" = camera only, no YOLO
+    imgsz: 320
+    conf: 0.40
+    max_fps: 10.0
+    jpeg_quality: 70
+    publish_raw: false        # also send the plain camera image (more WiFi traffic)
+    stop_on: ["crack"]        # classes that raise /defect_alarm
+    save_dir: "~/pipe_robot/detections"
+    loop_video: true

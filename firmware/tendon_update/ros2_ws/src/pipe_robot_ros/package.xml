@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+  <name>pipe_robot_ros</name>
+  <version>0.1.0</version>
+  <description>Pipe inspection robot: ESP32 serial bridge and YOLO vision node (Pi), RViz view (laptop)</description>
+  <maintainer email="anjali@example.com">Anjali Ullas</maintainer>
+  <license>MIT</license>
+
+  <exec_depend>rclpy</exec_depend>
+  <exec_depend>std_msgs</exec_depend>
+  <exec_depend>geometry_msgs</exec_depend>
+  <exec_depend>sensor_msgs</exec_depend>
+  <exec_depend>visualization_msgs</exec_depend>
+  <exec_depend>vision_msgs</exec_depend>
+  <exec_depend>tf2_ros</exec_depend>
+  <exec_depend>launch</exec_depend>
+  <exec_depend>launch_ros</exec_depend>
+  <exec_depend>python3-serial</exec_depend>
+
+  <export>
+    <build_type>ament_python</build_type>
+  </export>
+</package>

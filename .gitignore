@@ -1,0 +1,34 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# Captured frames, videos, model artefacts
+detections/
+*.jpg
+*.jpeg
+*.png
+*.mp4
+*.avi
+*.zip
+best_ncnn_model/
+best*.pt
+*.ncnn.bin
+*.ncnn.param
+
+# ROS 2 build artefacts
+build/
+install/
+log/
+
+# Arduino build artefacts
+*.hex
+*.bin
+build/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+*.swp
